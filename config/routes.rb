@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
   root to: 'staticpages#index'
   
-  get 'load_geo_json_data', to: 'staticpages#load_geo_json_data'
+  namespace :api do
+    namespace :v1 do
+      resources :geojson_info, only: [:index, :show], param: :country_name
+    end
+  end
 
 end

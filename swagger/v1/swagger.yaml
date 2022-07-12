@@ -1,0 +1,88 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/geojson_info":
+    get:
+      summary: list cars
+      tags:
+      - GeojsonInfo
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data_type:
+                    type: string
+                  country_name:
+                    type: string
+                  properties:
+                    type: json
+                  geometry:
+                    type: json
+            application/xml:
+              schema:
+                type: object
+                properties:
+                  data_type:
+                    type: string
+                  country_name:
+                    type: string
+                  properties:
+                    type: json
+                  geometry:
+                    type: json
+  "/api/v1/geojson_info/{country_name}":
+    get:
+      summary: show geojson_info
+      tags:
+      - GeojsonInfo
+      parameters:
+      - name: country_name
+        in: path
+        description: country_name
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data_type:
+                    type: string
+                  country_name:
+                    type: string
+                  properties:
+                    type: json
+                  geometry:
+                    type: json
+                required:
+                - country_name
+            application/xml:
+              schema:
+                type: object
+                properties:
+                  data_type:
+                    type: string
+                  country_name:
+                    type: string
+                  properties:
+                    type: json
+                  geometry:
+                    type: json
+                required:
+                - country_name
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: https://rocky-wave-25628.herokuapp.com/

@@ -1,0 +1,2 @@
+class GeojsonInfo < ApplicationRecord
+end
