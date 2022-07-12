@@ -85,4 +85,4 @@ servers:
 - url: https://{defaultHost}
   variables:
     defaultHost:
-      default: https://rocky-wave-25628.herokuapp.com/
+      default: https://rocky-plateau-09864.herokuapp.com/
