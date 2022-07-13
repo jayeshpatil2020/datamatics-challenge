@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Dependencies
 
-Things you may want to cover:
+* Ruby : 3.0.1
+* Rails : 6.1.6
 
-* Ruby version
+Local Setup:
 
-* System dependencies
+* bundle install
 
-* Configuration
+* bundle exec rails db:migrate
 
-* Database creation
+* bundle exec rails db:seed
 
-* Database initialization
+Start Rails server: 
 
-* How to run the test suite
+* rails s
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Go to http://localhost:3000/api-docs to view swagger-ui
